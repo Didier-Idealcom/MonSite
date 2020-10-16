@@ -1,0 +1,26 @@
+@import 'mixins';
+
+/**
+ * Variables
+ */
+
+$font-primary: 'Nunito Sans', sans-serif;
+$font-second: 'Crimson Text', serif;
+
+.font-primary {font-family: $font-primary;}
+.font-second {font-family: $font-second;}
+
+$color-primary: #2c3e50; // Bleu foncé
+$color-second: #0090b2; // Bleu
+$color-white: #fff; // Blanc
+$color-black: #000; // Noir
+
+.color-primary {color: $color-primary;}
+.color-second {color: $color-second;}
+.color-black {color: $color-black;}
+.color-white {color: $color-white;}
+
+.bg-primary {background-color: $color-primary;}
+.bg-second {background-color: $color-second;}
+.bg-black {background-color: $color-black;}
+.bg-white {background-color: $color-white;}

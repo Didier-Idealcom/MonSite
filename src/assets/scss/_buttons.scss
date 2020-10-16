@@ -1,0 +1,46 @@
+/**
+ * Boutons
+ * <button class="bg-black color-white hover-bg-primary hover-color-second">Bouton</button>
+ * <a class="btn_base bg-black color-white hover-bg-primary hover-color-second" href="#">Bouton</a>
+ */
+
+ button, .btn_base {
+	position: relative; display: flex; align-items: center; width: max-content; max-width: 100%; border: none; text-align: center; text-decoration: none; cursor: pointer; -webkit-appearance: none; line-height: 1;
+	&:hover {text-decoration: none;}
+	&:focus {outline: none;}
+
+	&.btn-primary {height: 40px; padding: 0 30px; border-radius: 20px;}
+	&.btn-second {height: 30px; padding: 0 20px; border-radius: 15px; font-size: 13px; font-size: 1.3rem;}
+
+	&.color-primary {color: $color-primary;}
+	&.color-second {color: $color-second;}
+	&.color-white {color: $color-white;}
+	&.color-black {color: $color-black;}
+
+	&.bg-primary {background-color: $color-primary;}
+	&.bg-second {background-color: $color-second;}
+	&.bg-white {background-color: $color-white;}
+	&.bg-black {background-color: $color-black;}
+
+	&.border-primary {border: 1px solid $color-primary;}
+	&.border-second {border: 1px solid $color-second;}
+	&.border-white {border: 1px solid $color-white;}
+	&.border-black {border: 1px solid $color-black;}
+
+	&.hover-color-primary:hover {color: $color-primary;}
+	&.hover-color-second:hover {color: $color-second;}
+	&.hover-color-white:hover {color: $color-white;}
+	&.hover-color-black:hover {color: $color-black;}
+
+	&.hover-bg-primary:hover {background-color: $color-primary;}
+	&.hover-bg-second:hover {background-color: $color-second;}
+	&.hover-bg-white:hover {background-color: $color-white;}
+	&.hover-bg-black:hover {background-color: $color-black;}
+
+	&.hover-border-primary:hover {border: 1px solid $color-primary;}
+	&.hover-border-second:hover {border: 1px solid $color-second;}
+	&.hover-border-white:hover {border: 1px solid $color-white;}
+	&.hover-border-black:hover {border: 1px solid $color-black;}
+
+	i, img {margin-left: 5px;}
+}

@@ -1,0 +1,60 @@
+/**
+ * Formulaires
+ */
+
+ .form_common {
+	margin: 0 auto;
+
+	::-webkit-input-placeholder {/*opacity: 1; */color: $color-black;}
+	::placeholder {/*opacity: 1; */color: $color-black;}
+	input, select, textarea {display: block; width: 100%; min-width: 0; max-width: 100%; background-color: transparent; background-repeat: no-repeat; background-position: 98% center; border: 1px solid $color-black; font-family: inherit; color: inherit; outline: none;}
+	&:not(.novalidation) {
+		input, select, textarea {
+			&:focus:valid {border-color: #33cc00; box-shadow: 0 0 3px #33cc00; background-image: url(../assets/images/valide.png);}
+			&:-moz-ui-invalid {box-shadow: none;}
+			&:focus:invalid {border-color: #bd2716; box-shadow: 0 0 3px #bd2716; background-image: url(../assets/images/invalide.png);}
+			&.validation:not(:focus):invalid {transition: all .3s ease-out; animation: invalidInput 0.6s linear;}
+		}
+	}
+	input {height: 40px; padding: 0 10px;}
+	textarea {height: 100px; padding: 10px; overflow: auto;}
+	[type="checkbox"], [type="radio"] {display: inline-block; width: auto; min-width: inherit; height: auto; margin-right: 10px;}
+	[type="submit"] {
+		margin: 0 auto; cursor: pointer; -webkit-appearance: none;
+		&:focus {border-color: inherit !important; box-shadow: inherit !important; background-image: inherit !important;}
+	}
+	.select_wrapper {
+		position: relative; width: 100%;
+		&:after {content: ''; position: absolute; top: 50%; right: 10px; display: block; width: 0; height: 0; margin-top: -3px; border-width: 6px; border-style: solid; border-color: transparent; border-top-color: $color-black; pointer-events: none;}
+		select {height: 40px; padding: 5px 10px; background-position: 93% center; appearance: none; -moz-appearance: none; -webkit-appearance: none;}
+	}
+	.form_row {
+		position: relative; display: flex; justify-content: space-between; margin-bottom: 20px;
+		@include bp-mobile {flex-direction: column; margin: 0;}
+
+		.form_group {
+			display: flex; align-items: center; width: 100%; margin-left: 20px;
+			@include bp-mobile {flex-direction: column; margin: 0 0 20px 0;}
+			&:first-child {margin-left: 0;}
+			label {
+				width: 150px; margin-right: 10px;
+				&:last-child {width: 100%;}
+				@include bp-mobile {display: block; width: 100%; margin: 0 0 5px 0;}
+			}
+			&.form_group_vertical {
+				flex-direction: column;
+				label {width: 100%; margin: 0 0 5px 0;}
+			}
+			&.align_right {justify-content: flex-end;}
+			&.form_group_block {display: block;}
+			&.form_auto_size {width: auto;}
+
+			.g-recaptcha {
+				@include bp-mobile {transform: scale(0.70); transform-origin: 0 0;}
+			}
+		}
+	}
+
+    /* Custom */
+    max-width: 700px;
+}

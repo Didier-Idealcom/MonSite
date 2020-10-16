@@ -1,0 +1,75 @@
+/**
+ * Mixins
+ */
+
+// Border radius
+// usage : @include border-radius(10px);
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	   -moz-border-radius: $radius;
+		-ms-border-radius: $radius;
+		 -o-border-radius: $radius;
+			border-radius: $radius;
+}
+
+// Box shadow
+// usage : @include box-shabow(0px 0px 10px 0px rgba(0,0,0,0.15));
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	   -moz-box-shadow: $shadow;
+			box-shadow: $shadow;
+}
+
+// Transition
+// usage : @include transition(color .3s ease);
+@mixin transition($args) {
+	-webkit-transition: $args;
+	   -moz-transition: $args;
+		-ms-transition: $args;
+		 -o-transition: $args;
+			transition: $args;
+}
+
+// Mediaqueries bp = breakpoint
+// usage : @include bp-mobile {width: 100%;}
+@mixin bp-mobile {
+	@media only screen and (max-width: 480px) {
+		@content;
+	}
+}
+
+@mixin bp-mobile-large {
+	@media only screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin bp-tablette {
+	@media only screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin bp-tablette-only {
+	@media only screen and (min-width: 769px) and (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin bp-desktop {
+	@media only screen and (min-width: 1025px) {
+		@content;
+	}
+}
+
+@mixin bp-desktop-large {
+	@media only screen and (min-width: 1201px) {
+		@content;
+	}
+}
+
+@mixin print {
+	@media print {
+		@content;
+	}
+}
