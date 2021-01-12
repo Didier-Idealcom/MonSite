@@ -30,7 +30,7 @@ export default {
   methods: {
     buildTimeline () {
       const tl = gsap.timeline()
-      tl.fromTo(this.$refs.portrait, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 2 })
+      tl.fromTo(this.$refs.portrait, { scale: 0.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 2 })
       tl.fromTo(this.$refs.h1, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5 }, '<0.5')
       tl.fromTo(this.$refs.h2, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5 }, '<0.5')
       this.timeline = tl
@@ -50,6 +50,7 @@ export default {
   },
   mounted () {
     this.buildTimeline()
+    this.timeline.timeScale(1)
     this.timeline.play()
   },
   beforeUpdate () {
@@ -59,6 +60,7 @@ export default {
 
   },
   beforeRouteLeave (to, from, next) {
+    this.timeline.timeScale(2)
     this.timeline.reverse().then(function () {
       next()
     })

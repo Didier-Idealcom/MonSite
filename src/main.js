@@ -5,4 +5,6 @@ import store from './store'
 import router from './router'
 // import VueMeta from 'vue-meta'
 
-createApp(App).use(router).use(store).mount('#app')
+const app = createApp(App)
+
+app.use(router).use(store).mount('#app')

@@ -61,9 +61,10 @@ export default {
     buildTimeline () {
       const tl = gsap.timeline()
       tl.fromTo(this.$refs.h1, { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 })
-      this.$el.querySelectorAll('input, select, textarea, button').forEach(function (input) {
+      /* this.$el.querySelectorAll('input, select, textarea, button').forEach(function (input) {
         tl.fromTo(input, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5 })
-      })
+      }) */
+      tl.staggerFromTo(this.$el.querySelectorAll('input, select, textarea, button'), 1, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5 }, 0.5)
       this.timeline = tl
     },
     handleSubmit (e) {
@@ -84,6 +85,7 @@ export default {
   },
   mounted () {
     this.buildTimeline()
+    this.timeline.timeScale(1)
     this.timeline.play()
   },
   beforeUpdate () {
@@ -93,6 +95,7 @@ export default {
 
   },
   beforeRouteLeave (to, from, next) {
+    this.timeline.timeScale(3)
     this.timeline.reverse().then(function () {
       next()
     })

@@ -48,7 +48,7 @@ body {font-family: $font-primary; font-size: 16px; font-size: 1.6rem; color: $co
 #app {text-align: center;}
 
 .background {
-  min-height: 100vh;
+  min-height: 100vh; transition: all ease-in-out 1s;
   &.light {
     background-color: #fff; color: $color-primary;
     .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {background-color: #000;}
