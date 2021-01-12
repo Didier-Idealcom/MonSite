@@ -34,8 +34,8 @@ export default {
       // Scene
       scene = new THREE.Scene()
 
-      const light1 = new THREE.AmbientLight(0xffffff, 0.5),
-            light2 = new THREE.DirectionalLight(0xffffff)
+      const light1 = new THREE.AmbientLight(0xffffff, 0.5)
+      const light2 = new THREE.DirectionalLight(0xffffff)
 
       light2.position.set(0, 0, 0)
 
@@ -74,9 +74,9 @@ export default {
     },
     onWindowResize () {
       camera.aspect = window.innerWidth / window.innerHeight
-      camera.updateProjectionMatrix();
+      camera.updateProjectionMatrix()
       renderer.setSize(window.innerWidth, window.innerHeight)
-      controls.handleResize();
+      controls.handleResize()
     }
   },
   beforeRouteEnter (to, from, next) {
